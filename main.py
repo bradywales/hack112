@@ -521,4 +521,10 @@ def redrawAll(app, canvas):
     #                    app.cursor_x+app.cursor_radius, app.cursor_y+app.cursor_radius, fill=app.cursor_fill,
     #                    width=0)
 
+def appStopped(app):
+    files = "./images"
+    for image in os.listdir(files):
+        os.remove(f"./images/{image}")
+
+
 runApp(width=1600, height=900)
