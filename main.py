@@ -40,78 +40,13 @@ def appStarted(app):
     # app.cursor_fill = '#D9B611'
     # app.cursor_x, app.cursor_y = -1, -1
 
-    # temporary patch to make runtime faster / revert before final version
-    if app.testing == 0:
-        app.reddit = []
-        app.twitter = []
-        app.youtube = []
-        app.insta = []
-    else:
-        app.reddit = [['[Vacchiano] Odell Beckham’s camp is reportedly warning non-contenders not to claim him or there’ll be “issues.” Of course. There are always “issues” with him. Just one of many reasons a reunion with the Giants was never going to happen.', 'r/nfl', 'u/KastaJav', 'https://reddit.com/r/nfl/comments/qoqq6t/vacchiano_odell_beckhams_camp_is_reportedly'], ["Struggling with dull, dry and sensitive skin? Recover a healthy glow with Vichy's Mineral 89 Prebiotic. Formulated to help repair your skin barrier and defend against future aggression. Use as the first step in your routine after cleansing. It is perfect for layering alongside other serums!", 'u/VichyLaboratories', 'u/VichyLaboratories', 'None'], ['Finally getting back from a 10 day cruise. Who’s excited for Rodgers vs. Mahomes!?!?', 'r/GreenBayPackers', 'u/ApplecriteKiller', 'https://reddit.com/r/GreenBayPackers/comments/qoow0x/finally_getting_back_from_a_10_day_cruise_whos'], ['Week 9 Match Up Photoshop: Purple Rain', 'r/ravens', 'u/greenbarretj', 'https://reddit.com/r/ravens/comments/qon2uq/week_9_match_up_photoshop_purple_rain'], ['Jags pregame hype Smirnoff Ice chug', 'r/Jaguars', 'u/Trumbulhockeyguy', 'https://reddit.com/r/Jaguars/comments/qor1b5/jags_pregame_hype_smirnoff_ice_chug'], ['Buying meal credits', 'r/cmu', 'u/HereForTheTea78', 'https://reddit.com/r/cmu/comments/qopue9/buying_meal_credits'], ['The Holiday House, a motel & 900 seat nightclub in Monroeville, PA from 1955-88, was an institution in the Pittsburgh area. Some of the biggest names in showbiz played there.', 'r/pittsburgh', 'u/AxlCobainVedder', 'https://reddit.com/r/pittsburgh/comments/qootzg/the_holiday_house_a_motel_900_seat_nightclub_in'], ['We need you Colt', 'r/AZCardinals', 'u/lancethruster12', 'https://reddit.com/r/AZCardinals/comments/qoqjwr/we_need_you_colt']]
-        app.twitter = [['Carnegie Mellon University', '@CarnegieMellon', '"If you lead your life the right way, the karma will take care of itself. The dreams will come to you.”\n\nOn this day 14 years ago, only a few weeks after learning he had just months to live, CMU professor and alumnus Randy Pausch delivered what became known as "The Last Lecture."', 'https://twitter.com/CarnegieMellon/status/1439226207019622404'], ['Carnegie Mellon University', '@CarnegieMellon', '"If you lead your life the right way, the karma will take care of itself. The dreams will come to you.”\n\nOn this day 14 years ago, only a few weeks after learning he had just months to live, CMU professor and alumnus Randy Pausch delivered what became known as "The Last Lecture."', 'https://twitter.com/CarnegieMellon/status/1439226207019622404'], ['Elon Musk', '@elonmusk', 'Moving at ~23 times speed of sound, circling Earth every ~90 minutes', 'https://twitter.com/elonmusk/status/1439090465698041861'], ['SpaceX', '@SpaceX', 'Orbital moonrise', 'https://twitter.com/SpaceX/status/1439290633621958659'], ['Carnegie Mellon University', '@CarnegieMellon', "Researchers from CMU and @OregonState on Team Explorer put autonomous robots to the test, developing tech to aid first responders in environments that are unsafe for humans.\n\nThey're competing in the final leg of the @DARPA #SubTChallenge.\n\nhttps://cmu.is/scs-subtchallenge… #TartanProud", 'https://twitter.com/CarnegieMellon/status/1439254700860268544'], ['AirLab', '@AirLabCMU', '#TeamExplorerSubt is packed and ready to go!', 'https://twitter.com/AirLabCMU/status/1438867521428496384'], ['President Biden', '@POTUS', 'My plan is very clear: we will not raise taxes on anyone making under $400,000 a year.\n \nIt’s only corporations and people making over $400,000 a year who will see their taxes go up.', 'https://twitter.com/POTUS/status/1439289427432509440'], ['Elon Musk', '@elonmusk', 'Moving at ~23 times speed of sound, circling Earth every ~90 minutes', 'https://twitter.com/elonmusk/status/1439090465698041861'], ['Carnegie Mellon University', '@CarnegieMellon', 'CareLink provides an alternative option for finding help or a job and is a way for our Tartan community to connect, support one another, and embrace our shared talent. https://cmu.is/carelink', 'https://twitter.com/CarnegieMellon/status/1439322342363213825'], ['President Biden', '@POTUS', 'Big corporations and the super wealthy have to start paying their fair share.\n \nIt is long overdue.', 'https://twitter.com/POTUS/status/1439258143897313281'], ['AirLab', '@AirLabCMU', '#TeamExplorerSubt is packed and ready to go!', 'https://twitter.com/AirLabCMU/status/1438867521428496384']]
-        app.youtube = [['Squid Game - SNL', 'Saturday Night Live', 'https://i.ytimg.com/vi/vWdHPMhy270/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLBRjFFWOF4SZJsLnqyNkPmJnuo0rQ', 'https://www.youtube.com/watch?v=vWdHPMhy270'], ['Guy Pulls Out Sign on Gophers Kiss Cam', 'Minnesota Gophers', 'https://i.ytimg.com/vi/MyfYodavAj8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLAjlco_UAvXpcWwjr-D7m0t51UShA', 'https://www.youtube.com/watch?v=MyfYodavAj8'], ['Pokemon but the World Champion controls the AI', 'SmallAnt', 'https://i.ytimg.com/vi/QTxoDSAe7yw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDkakXcqJfsbcSJuR3_rBTVVgpWdg', 'https://www.youtube.com/watch?v=QTxoDSAe7yw'], ['Risk', 'Telepurte', 'https://i.ytimg.com/vi/wqJAMFH1pqA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCz84OzpAXg2EVv4UnRhss8iDm2PQ', 'https://www.youtube.com/watch?v=wqJAMFH1pqA'], ['Liquid Venom Suit Covers My Whole Body!', 'JLaservideo', 'https://i.ytimg.com/vi/8Xfz09IJTYY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDeYPHOZLEFExj9NnQgOsLzHmzTgg', 'https://www.youtube.com/watch?v=8Xfz09IJTYY'], ['20 FUNNY MOMENTS WITH REPORTERS IN SPORTS', 'SportsPro', 'https://i.ytimg.com/vi/QIwA0TG5Oho/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCa-6F6xJBLo_hyyDgiUhswSZ2GJw', 'https://www.youtube.com/watch?v=QIwA0TG5Oho'], ['What Happens After 30 Days of Cold Showers', 'Gravity Transformation - Fat Loss Experts', 'https://i.ytimg.com/vi/nOuzSOnfyv0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDSJ2N96Kycf79EswUBvuuZi8DStA', 'https://www.youtube.com/watch?v=nOuzSOnfyv0'], ['Teenagers Trapped Inside A Cave For 1000 Years, But They Still Never Aged', 'Scifi Recapped', 'https://i.ytimg.com/vi/26eD2jw7sSk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR1aTSS-rueiwUh7JTWOigwQVqnw', 'https://www.youtube.com/watch?v=26eD2jw7sSk'], ['Snoop Dogg Realizes He Left His Stream Live for 8 hours+', "ghecco's twitch clips", 'https://i.ytimg.com/vi/TAOM449H6Y8/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLBmKARVe3c82tet3dfRURDJZ-uCxA', 'https://www.youtube.com/watch?v=TAOM449H6Y8'], ['Facebook Is Dead', 'penguinz0', 'https://i.ytimg.com/vi/fdMil7y4Vk4/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLA8l2DGHNGDrWUdm6dqj2ZLP6UnTA', 'https://www.youtube.com/watch?v=fdMil7y4Vk4'], ['What Does it Actually Feel Like to be Shot', 'The Infographics Show', 'https://i.ytimg.com/vi/BmwVxj6E2KE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLA-Z8U7oHyeQy7zGS1Nh9wv0Ov6Zg', 'https://www.youtube.com/watch?v=BmwVxj6E2KE'], ['Conservative Covid-19 survivor is now getting vaccinated but losing friends', 'CNN', 'https://i.ytimg.com/vi/X1DL53cVJd0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLAsqm9i1DCcTiFyvee8JyI4hyhwWA', 'https://www.youtube.com/watch?v=X1DL53cVJd0'], ['Companies face religious exemption requests for COVID-19 vaccine', 'CBS News', 'https://i.ytimg.com/vi/qwY24i9Z1XE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLA-CccOgrpo0O0pd-68lxzsSt6Ohg', 'https://www.youtube.com/watch?v=qwY24i9Z1XE'], ['Reacting to Aaron Rodgers opening up on positive COVID-19 test and vaccination status | This Just In', 'ESPN', 'https://i.ytimg.com/vi/QADmWcbEytI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCnaY4okf3h5yIp76nGLP22gmDciA', 'https://www.youtube.com/watch?v=QADmWcbEytI'], ['Businesses have until after the holidays to implement Biden Covid vaccine mandate', 'CNBC Television', 'https://i.ytimg.com/vi/-sd-gZz04F8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDkIcAGH4ww0vRygTTIw8tDzB-cWg', 'https://www.youtube.com/watch?v=-sd-gZz04F8']]
-        app.insta = [['@nflthrowbackandnfl', 'Anyone else miss watching Patrick Willis? ...\xa0more', 'https://instagram.fagc2-1.fna.fbcdn.net/v/t51.2885-15/e35/252697993_211415267789670_8098226689732028879_n.jpg?_nc_ht=instagram.fagc2-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=KhNsTKcAuqUAX-Inqd7&edm=AIQHJ4wBAAAA&ccb=7-4&oh=21b5c84e7f3337c353129a79c67d620e&oe=618DE091&_nc_sid=7b02f1&ig_cache_key=MjcwMTM0NjM3ODcwMDgxNTU1NQ%3D%3D.2-ccb7-4', 'https://www.instagram.com/p/CV9HDj7vqIT/'], ['@teamkanyedaily', 'Highlights from @dondasports first game courtesy of @overtime & @overtimemikey. ...\xa0more', 'https://instagram.fagc2-1.fna.fbcdn.net/v/t51.2885-15/e35/254553343_1863873687151968_8755173896503738110_n.jpg?_nc_ht=instagram.fagc2-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=AoPd2aD5ZE8AX-jwa9T&edm=AIQHJ4wBAAAA&ccb=7-4&oh=552405e5abe0149f2c9fd4c730f94d84&oe=618E7F83&_nc_sid=7b02f1&ig_cache_key=MjcwMTQ0NTE1NDg2MDk0MDYzMw%3D%3D.2-ccb7-4', 'https://www.instagram.com/p/CV9dg7YrhWU/'], ['@middleclassfancy', 'I don’t know what to do with this information. Tacky sweaters available at the link in bio 🍻', 'https://instagram.fagc2-1.fna.fbcdn.net/v/t51.2885-15/e35/252966819_264710662296207_6096271533021232193_n.jpg?_nc_ht=instagram.fagc2-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=4vTS8aY8X7kAX-J6ewM&edm=AIQHJ4wBAAAA&ccb=7-4&oh=89bead24c4b62ca6bd77da2fddee652e&oe=618E881C&_nc_sid=7b02f1&ig_cache_key=MjcwMTM1ODMzOTQyMDE2NjAxMQ%3D%3D.2-ccb7-4', 'https://www.instagram.com/p/CV9JxpgL6o3/'], ['@nfl', 'Still in awe of Younghoe Koo doing this 😦...\xa0more', 'https://instagram.fagc2-1.fna.fbcdn.net/v/t51.2885-15/fr/e15/s1080x1080/252749757_436578881187975_3515494504537180782_n.jpg?_nc_ht=instagram.fagc2-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=uVfW8UMrjAUAX-S37T_&edm=AIQHJ4wBAAAA&ccb=7-4&oh=6cfba8b1e119876f4a0c2a46d3274b6d&oe=618F0C94&_nc_sid=7b02f1&ig_cache_key=MjcwMTIzMzc1MzYxMDQ4NjA1Nw%3D%3D.2-ccb7-4', 'https://www.instagram.com/p/CV8tcpnvliG/'], ['@shithole', 'Fit check', 'https://instagram.fagc2-1.fna.fbcdn.net/v/t51.2885-15/e35/252771487_609089230282568_8430562557066216568_n.jpg?_nc_ht=instagram.fagc2-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=IwcTYP11FLMAX8uQiOJ&edm=AIQHJ4wBAAAA&ccb=7-4&oh=897001243e60430714ed6e2fc5f3ae81&oe=618F5811&_nc_sid=7b02f1&ig_cache_key=MjcwMTM2NTQ4NDEzOTgzNzY1MQ%3D%3D.2-ccb7-4', 'https://www.instagram.com/p/CV9LZlJpaDE/']]
-        app.thumbnails = []
-        for i in range(6):
-            thumbnail = app.youtube[i][2]
-            app.thumbnails.append(thumbnail)
-        app.images_temp = [app.loadImage(thumbnail) for thumbnail in app.thumbnails]
-        app.images = [app.scaleImage(image, 0.1771) for image in app.images_temp]
-    #app.twitter = scrapeTwitter()
-    #app.reddit = scrapeReddit()
-    #app.youtube = scrapeYoutube()
-    #app.insta = scrapeInsta()
-    # thumbnails need to be loaded in appStarted
-    # youtube thumbnails
-    """
-    app.thumbnails = []
-    for i in range(6):
-        thumbnail = app.youtube[i][2]
-        app.thumbnails.append(thumbnail)
-    app.images_temp = [app.loadImage(thumbnail) for thumbnail in app.thumbnails]
-    app.images = [app.scaleImage(image, 0.1771) for image in app.images_temp]
-    # insta thumbnails
-    app.insta_thumbnails = []
-    app.insta_scales = []
-    app.posts = []
-    for i in range(3):
-        thumbnail = app.insta[i][2]
-        app.insta_thumbnails.append(thumbnail)
-    """
-        # gets scalar for images
-        # img = Image.open(thumbnail)
-        # tkimage = ImageTk.PhotoImage(img)
-        # h = tkimage.height()
-        # app.insta_scales.append(h)
 
-        # URL = "http://www.universeofsymbolism.com/images/ram-spirit-animal.jpg"
-        # u = urlopen(URL)
-        # raw_data = u.read()
-        # u.close()
-        #
-        # im = Image.open(BytesIO(raw_data))
-        # photo = ImageTk.PhotoImage(im)
-        # h = photo.height()
-        # app.insta_scales.append(h)
+    app.reddit = []
+    app.twitter = []
+    app.youtube = []
+    app.insta = []
 
-    # app.images_temp2 = [app.loadImage(thumbnail) for thumbnail in app.insta_thumbnails]
-    # for i in range(3):
-    #     app.posts.append(app.scaleImage(app.images_temp2[i], app.insta_scales[i]))
-
-
-# initially used for testing / debugging
-# def keyPressed(app, event):
-#     print(app.reddit)
-# useless for now
-
-
-# animation too slow because CMU graphics limited to 10 fps
-# def timerFired(app):
-#     if app.animateColors[0] != ['white']:
-#         if app.r1 <= 30:
-#             app.r1 += 5
-#     else:
-#         app.r1 = 1
+    
 def mousePressed(app,event):
     if (event.x<205):
         if(40<event.y<60):
